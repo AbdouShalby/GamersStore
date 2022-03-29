@@ -1,0 +1,14 @@
+{
+    "name": "bram0/samer",
+    "authors": [
+        {
+            "name": "Samer",
+            "email": "samer@gmail.com"
+        }
+    ],
+	"autoload": {
+		"files": ["config/constants.php", "config/credentials.php", "config/utilities.php"],
+		"classmap": ["src/"]
+	},
+    "require": {}
+}
