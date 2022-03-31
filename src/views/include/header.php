@@ -16,8 +16,8 @@
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="<?= URLROOT; ?>" data-scroll="home">
-          <img class="img-fluid w-75" src="<?= URLROOT;?>/public/imgs/logo2.png" alt="Brand Logo">
+        <a class="navbar-brand  me-0" href="<?= URLROOT; ?>" data-scroll="home">
+          <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/logo2.png" alt="Brand Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>

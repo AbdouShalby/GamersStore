@@ -4,7 +4,6 @@
   --babyblue-color: #33D1CC;
   --section-color: #EFF7FA;
 }
-
 html { 
   scroll-behavior: smooth; 
 }
@@ -12,7 +11,6 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
 }
-
 .main-btn {
   background-color: var(--babyblue-color);
   color: var(--dark-color);
@@ -21,7 +19,6 @@ body {
 .main-btn:hover {
   color: #000000;
 }
-
 .main-title::after {
   content: '';
   width: 120px;
@@ -32,15 +29,15 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .main-title svg {
   color: #FF6A88;
-
 }
-
 /* Start Navbar */
 .navbar {
   background-color: var(--dark-color);
+}
+.navbar .navbar-brand {
+  max-width: 400px;
 }
 .navbar .navbar-nav .nav-link,
 .footer .links ul li a {
@@ -53,13 +50,6 @@ body {
 .footer .links ul li a:focus,
 .footer .links ul li a:hover{
   color: var(--red-color);
-}
-.navbar .search {
-  border-left: 1px solid var(--red-color);
-}
-.navbar .search svg {
-  color: var(--red-color);
-  cursor: pointer;
 }
 .navbar .navbar-toggler {
   color: var(--red-color);
@@ -110,9 +100,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  color: white;
-  transition: 0.3s;
+  color: var(--dark-color);
+  transition: 0.4s;
   font-size: 1.5rem;
   transform: translateX(calc(-100% - 5px));
 }
@@ -184,37 +173,32 @@ body {
 }
 /* End Footer */
 
+/* Start About */
+.about-page {
+  background-color: var(--section-color);
+}
+/* End About */
+/* Start Contact */
+.contact-page {
+  -moz-background-image: url("../imgs/contact.jpg");
+  -webkit-background-image: url("../imgs/contact.jpg");
+  -o-background-image: url("../imgs/contact.jpg");
+  background-image: url("../imgs/contact.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.contact-page form input,
+.contact-page form textarea,
+.contact-page form a {
+  width: 400px;
+}
+/* End Contact */
+
 /* Start Login */
 .login,
 .signup {
   background-color: var(--section-color);
-}
-.login form input,
-.login form a,
-.signup form input,
-.signup form a,
-.forgot form input,
-.forgot form a,
-.contact form input,
-.contact form textarea,
-.contact form a {
-  width: 300px;
-}
-.login form input:not([type="submit"]),
-.signup form input:not([type="submit"]),
-.forgot form input:not([type="submit"]) {
-  outline: none;
-  border: 2px solid #BBB;
-  border-radius: 2px;
-  background-color: var(--section-color);
-}
-.login form input:not([type="submit"]):focus,
-.signup form input:not([type="submit"]):focus,
-.forgot form input:not([type="submit"]):focus {
-  outline: none;
-  border: 2px solid var(--dark-color)!important;
-  border-radius: 2px;
-  background-color: white;
 }
 /* End Login */
 
@@ -236,5 +220,29 @@ body {
 }
 #scroll-up:hover {
   background-color: var(--red-color);
+}
+.login form input,
+.login form a,
+.signup form input,
+.signup form a,
+.forgot form input,
+.forgot form a {
+  width: 300px;
+}
+.login form input:not([type="submit"]),
+.signup form input:not([type="submit"]),
+.forgot form input:not([type="submit"]) {
+  outline: none;
+  border: 2px solid #BBB;
+  border-radius: 2px;
+  background-color: var(--section-color);
+}
+.login form input:not([type="submit"]):focus,
+.signup form input:not([type="submit"]):focus,
+.forgot form input:not([type="submit"]):focus {
+  outline: none;
+  border: 2px solid var(--dark-color)!important;
+  border-radius: 2px;
+  background-color: white;
 }
 /* End Customs */
