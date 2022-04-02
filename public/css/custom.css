@@ -178,6 +178,7 @@ body {
   background-color: var(--section-color);
 }
 /* End About */
+
 /* Start Contact */
 .contact-page {
   -moz-background-image: url("../imgs/contact.jpg");
@@ -201,6 +202,10 @@ body {
   background-color: var(--section-color);
 }
 /* End Login */
+
+/* Start Cart */
+
+/* End Cart */
 
 /* Start Customs */
 #scroll-up {
