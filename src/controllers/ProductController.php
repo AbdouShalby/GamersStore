@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-class Product
+class ProductController
 {
 	public function products()
 	{

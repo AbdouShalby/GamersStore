@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-class Contact
+class ContactController
 {
 	public function contact()
 	{

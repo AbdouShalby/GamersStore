@@ -1,5 +1,5 @@
 <?php $page = 'About'; require_once APPROOT . '/src/views/include/header.php'; ?>
-	<div class="about-page pt-5 pb-5 text-center text-md-start m-auto">
+	<div class="about-page pt-5 text-center text-md-start m-auto">
 		<div class="container">
 			<div class="row p-5">
 				<div class="col-12 mb-3 text-center">

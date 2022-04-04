@@ -1,4 +1,4 @@
-<?php $page = 'Contact'; require_once APPROOT . '/src/views/include/header.php'; ?>
+<?php $page = 'ContactController'; require_once APPROOT . '/src/views/include/header.php'; ?>
   <div class="contact-page pt-5 pb-5 text-center text-md-start m-auto">
     <div class="container">
       <form class="row align-items-center text-center p-4 w-100">

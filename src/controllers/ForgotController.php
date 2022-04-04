@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-class Forgot
+class ForgotController
 {
 	public function forgot()
 	{

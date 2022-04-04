@@ -7,6 +7,7 @@ define('URLROOT', 'http://localhost/samer');
 define('SITENAME', 'Gamers Store');
 
 // CRUD Operations' Alert Messages
+define('SIGNUP_FAILD', 'Wrong Data');
 
 // Social Media Links
 define('FACEBOOK', 'https://www.facebook.com/');

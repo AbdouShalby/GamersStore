@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-class Terms
+class TermsController
 {
 	public function terms()
 	{

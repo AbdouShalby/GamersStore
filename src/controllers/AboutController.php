@@ -1,8 +1,8 @@
 <?php
 
-namespace Controllers;
+namespace controllers;
 
-class About
+class AboutController
 {
 	public function about()
 	{
