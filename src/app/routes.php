@@ -3,7 +3,7 @@
 // Static pages routes
 $router->addRoute('', ['controller' => 'IndexController', 'action' => 'home']);
 $router->addRoute('about', ['controller' => 'AboutController', 'action' => 'about']);
-$router->addRoute('products', ['controller' => 'Product', 'action' => 'products']);
+$router->addRoute('products', ['controller' => 'ProductController', 'action' => 'products']);
 $router->addRoute('contact', ['controller' => 'ContactController', 'action' => 'contact']);
 $router->addRoute('terms', ['controller' => 'TermsController', 'action' => 'terms']);
 $router->addRoute('login', ['controller' => 'LoginController', 'action' => 'login']);
