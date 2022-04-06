@@ -58,10 +58,15 @@ class SignupController
 
 			// Check If There's No Errors Proceed The Signup Operation
 			if (empty($_SESSION)) {
-				$this->signupModel->signup($_POST['first'], $_POST['last'], $_POST['email'], $hashedPass, $_POST['mobile']);
-				$_SESSION['account_created'] = ACCOUNT_CREATED;
-				header('location: ' . URLROOT . '/signup');
-			}
+                if ($this->signupModel->checkUser($_POST['email']) > 0){
+                    $_SESSION['empty_email'] = EXIST_EMAIL;
+                } else {
+                    $this->signupModel->signup($_POST['first'], $_POST['last'], $_POST['email'], $hashedPass, $_POST['mobile']);
+                    $_SESSION['account_created'] = ACCOUNT_CREATED;
+                }
+                header('location: ' . URLROOT . '/signup');
+
+            }
 		} else {
 			header('location: ' . URLROOT . '/signup');
 		}

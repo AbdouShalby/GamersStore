@@ -16,6 +16,7 @@ define('LAST_NAME_3', "Lastname Can't Be Less Than <strong>4 Characters</strong>
 define('LAST_NAME_20', "Lastname Can't Be More Than <strong>20 Characters</strong>");
 
 define('EMPTY_EMAIL', "Email Can't Be <strong>Empty</strong>");
+define('EXIST_EMAIL', "Email Is <strong>Exist</strong>");
 
 define('EMPTY_PASSWORD', "Password Can't Be <strong>Empty</strong>");
 

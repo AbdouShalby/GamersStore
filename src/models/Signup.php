@@ -13,17 +13,15 @@ class Signup
 		$this->db = new Database;
 	}
 
-	/**
-	 * UPDATE
-	 * @param $select
-	 * @param $from
-	 * @param $value
-	 * @return boolean
-	 */
-	public function checkUser($select, $from, $value) : bool
+    /**
+     * UPDATE
+     * @param $value
+     * @return boolean
+     */
+	public function checkUser( $value) : bool
 	{
-		$this->db->query("SELECT $select FROM $from WHERE $select = '$value'");
-		if ($this->db->execute())
+		$this->db->query("SELECT * FROM users WHERE email = '$value'");
+		if ($this->db->resultSet())
 			return true;
 		return false;
 	}
