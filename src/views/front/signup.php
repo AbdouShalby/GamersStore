@@ -1,4 +1,4 @@
-<?php require_once APPROOT . '/src/views/include/header.php'; session_start();?>
+<?php require_once APPROOT . '/src/views/include/header.php';?>
   <div class="signup pt-5 pb-5 text-center text-md-start m-auto">
 	<div class="container">
 	  <form class="row align-items-center text-center p-4 w-100" method="POST" action="<?= URLROOT; ?>/store">
@@ -6,7 +6,7 @@
           <h2>Sign Up</h2>
         </div>
         <div class="col-12 mb-4">
-          <input class="p-2" type="text" placeholder="First Name" name="first">
+          <input class="p-2" type="text" placeholder="First Name" required="required" name="first">
           <?php
             if (isset($_SESSION['empty_first'])) {
               echo "<div class='p-2 mt-2 alert alert-danger w-25 m-auto'>". $_SESSION['empty_first'] ."</div>";
@@ -21,7 +21,7 @@
           ?>
         </div>
         <div class="col-12 mb-4">
-          <input class="p-2" type="text" placeholder="Last Name" name="last">
+          <input class="p-2" type="text" placeholder="Last Name" required="required" name="last">
 	      <?php
 	        if (isset($_SESSION['empty_last'])) {
               echo "<div class='p-2 mt-2 alert alert-danger w-25 m-auto'>". $_SESSION['empty_last'] ."</div>";
@@ -45,7 +45,7 @@
           ?>
         </div>
         <div class="col-12 mb-4">
-          <input class="p-2" type="password" placeholder="Password" name="password">
+          <input class="p-2" type="password" placeholder="Password" required="required" name="password">
 	      <?php
 	        if (isset($_SESSION['empty_pass'])) {
             echo "<div class='p-2 mt-2 alert alert-danger w-25 m-auto'>". $_SESSION['empty_pass'] ."</div>";
@@ -54,7 +54,7 @@
 	      ?>
         </div>
         <div class="col-12 mb-4">
-          <input class="p-2" type="tel" placeholder="Mobile Number" name="mobile">
+          <input class="p-2" type="tel" placeholder="Mobile Number" required="required" name="mobile">
 	      <?php
 	        if (isset($_SESSION['empty_mob'])) {
               echo "<div class='p-2 mt-2 alert alert-danger w-25 m-auto'>". $_SESSION['empty_mob'] ."</div>";

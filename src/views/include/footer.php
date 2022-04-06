@@ -23,7 +23,6 @@
                 <li><a class="p-2 m-0 btn btn-lg fs-6 <?php if($page == 'Products'){echo 'active';} ?>" href="<?= URLROOT; ?>/products">Products</a></li>
                 <li><a class="p-2 m-0 btn btn-lg fs-6 <?php if($page == 'About'){echo 'active';} ?>" href="<?= URLROOT; ?>/about">About</a></li>
                 <li><a class="p-2 m-0 btn btn-lg fs-6" href="https://www.facebook.com/samer.hasson.50" target="_blank">Support</a></li>
-                <li><a class="p-2 m-0 btn btn-lg fs-6 <?php if($page == 'Terms'){echo 'active';} ?>" href="<?= URLROOT; ?>/terms">Terms And Condition</a></li>
               </ul>
             </div>
           </div>

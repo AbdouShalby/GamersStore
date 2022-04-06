@@ -15,14 +15,27 @@ class Login
 
 	/**
 	 * READ
-	 * @return array
+	 * @param $email
+	 * @param $password
+	 * @return bool
 	 */
-	public function login($email, $password)
+	public function login($email, $password): array
 	{
-		$this->db->query("SELECT (`email`, `password`) FROM users WHERE email = :email AND password = :pass)");
+		$this->db->query("SELECT email FROM users WHERE email = :email AND password = :pass");
 		$this->db->bind(':email', $email);
 		$this->db->bind(':pass', $password);
-		return $this->db->single();
-	}
 
+		if ($this->db->rowCount() > 0) {
+			$email = $this->db->single()->email;
+			$data = [
+				'valid'   =>  '1',
+				'email'  => $email
+			];
+			return $data;
+		}
+		return [
+			'valid' => 0
+		];
+
+	}
 }

@@ -17,7 +17,7 @@ class SignupController
 		view('front/signup');
 	}
 
-	// CREATE new task
+	// Create New Account
 	public function store()
 	{
 		session_start();
@@ -56,12 +56,14 @@ class SignupController
 				header('location: ' . URLROOT . '/signup');
 			}
 
-			// Check If There's No Error Proceed The Update Operation
+			// Check If There's No Errors Proceed The Signup Operation
 			if (empty($_SESSION)) {
 				$this->signupModel->signup($_POST['first'], $_POST['last'], $_POST['email'], $hashedPass, $_POST['mobile']);
 				$_SESSION['account_created'] = ACCOUNT_CREATED;
 				header('location: ' . URLROOT . '/signup');
 			}
+		} else {
+			header('location: ' . URLROOT . '/signup');
 		}
 	}
 }

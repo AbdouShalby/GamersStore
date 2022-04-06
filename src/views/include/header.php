@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        $button = '
+            <a class="text-decoration-none text-white" href="' . URLROOT . '/profile">
+                <i class="p-2 p-lg-3 fa fa-user-circle fa-2x"></i>
+            </a>
+        ';
+    } else {
+        $button = '<a class="btn rounded-pill main-btn" href="' . URLROOT . '/login">Login</a>';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +50,7 @@
               <a class="nav-link p-2 p-lg-3 <?php if($page == 'Contact'){echo 'active';} ?>" href="<?= URLROOT; ?>/contact">Contact</a>
             </li>
           </ul>
-          <a class="btn rounded-pill main-btn" href="<?= URLROOT; ?>/login">Login</a>
+          <?php echo $button;?>
         </div>
       </div>
     </nav>
