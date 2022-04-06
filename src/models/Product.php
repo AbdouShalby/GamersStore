@@ -25,7 +25,7 @@ class Product
      * @param $created_at
      * @return bool
      */
-    public function signup($name, $description, $image, $price, $stock, $country, $year, $created_at): bool
+    public function addProduct($name, $description, $image, $price, $stock, $country, $year, $created_at): bool
     {
         $this->db->query("INSERT INTO products (`name`, `description`, `image`, `price`,`stock`, `country`, `year`, `created_at`) VALUES (:name, :desc, :image, :price, :stock, :country, :year, :created)");
         $this->db->bind(':name', $name);
@@ -39,5 +39,25 @@ class Product
         if ($this->db->execute())
             return true;
         return false;
+    }
+
+    /**
+     * READ
+     * @return array
+     */
+    public function selectAll() : array
+    {
+        $this->db->query("SELECT * FROM products ORDER BY id DESC");
+        return $this->db->resultSet();
+    }
+
+    /**
+     * READ
+     * @return array
+     */
+    public function selectLastProducts() : array
+    {
+        $this->db->query("SELECT * FROM products ORDER BY id DESC LIMIT 8");
+        return $this->db->resultSet();
     }
 }

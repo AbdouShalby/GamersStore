@@ -26,7 +26,6 @@ class Login
 		$this->db->bind(':pass', $password);
 
 		if ($this->db->rowCount() > 0) {
-            print_r($this->db);
 			$first  = $this->db->single()->first_name;
 			$last   = $this->db->single()->last_name;
 			$email  = $this->db->single()->email;

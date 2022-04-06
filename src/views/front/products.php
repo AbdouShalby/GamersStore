@@ -1,6 +1,6 @@
 <?php $page = 'Products'; require_once APPROOT . '/src/views/include/header.php'; ?>
   <!-- Start Products -->
-  <div class="latest text-center pt-5 pb-5">
+  <div class="products text-center pt-5 pb-5">
     <div class="container">
       <div class="main-title mb-5 position-relative">
         <i class="fa-solid fa-computer fa-5x mb-4"></i>
@@ -8,46 +8,19 @@
         <p class="text-black-50 text-uppercase">Prepare To Be Amazed</p>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Case">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-01.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Monitor">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-02.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Keyboard">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-03.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Mouse">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-04.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Mouse Pad">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-05.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Head Set">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-06.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Stereo">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-07.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box mb-3 bg-white" data-work="Chair">
-            <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/work/work-08.jpg" alt="">
-          </div>
-        </div>
+          <?php foreach ($data as $item): ?>
+              <div class="col-sm-6 col-md-4 col-lg-3 text-start">
+                  <div class="box mb-3 bg-white" data-work="<?= $item->name;?>">
+                      <span class="price badge fs-6 ms-2 me-5"><?= '$' .$item->price; ?></span>
+                      <span class="stock badge fs-6 ms-5"><?= 'Stock: ' .$item->stock; ?></span>
+                      <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/products/<?= $item->image ?>" alt="<?= $item->name;?>">
+                      <span class="time text-center fs-6 d-block text-black-50"><?= $item->created_at; ?></span>
+                  </div>
+                  <div class="text-center">
+                      <button class="add-cart btn rounded-pill btn-outline-dark text-uppercase mb-5">ADD TO CART <i class="fa-solid fa-cart-shopping"></i></button>
+                  </div>
+              </div>
+          <?php endforeach; ?>
       </div>
     </div>
   </div>

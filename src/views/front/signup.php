@@ -70,7 +70,7 @@
         </div>
           <?php
           if (isset($_SESSION['account_created'])) {
-            echo "<div class='p-2 mt-2 alert alert-info w-25 m-auto'>". $_SESSION['account_created'] ."</div>";
+            echo "<div class='p-2 mt-2 alert alert-success w-25 m-auto'>". $_SESSION['account_created'] ."</div>";
             unset($_SESSION['account_created']);
           }
           ?>

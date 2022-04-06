@@ -26,6 +26,7 @@ class ComposerStaticInit13a4378e50f68a00bea007f64c218ac8
         'Models\\Database' => __DIR__ . '/../..' . '/src/models/Database.php',
         'Models\\Login' => __DIR__ . '/../..' . '/src/models/Login.php',
         'Models\\Signup' => __DIR__ . '/../..' . '/src/models/Signup.php',
+        'Models\\Product' => __DIR__ . '/../..' . '/src/models/Product.php',
         'Models\\Task' => __DIR__ . '/../..' . '/src/models/Task.php',
     );
 

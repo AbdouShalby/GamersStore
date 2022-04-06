@@ -74,30 +74,21 @@ body {
 }
 /* End Landing */
 
-/* Start Latest */
-.latest {
+/* Start Latest And Products */
+.latest, .products {
   background-color: var(--section-color);
 }
-.latest ul .active {
-  background-color: var(--babyblue-color);
-  color: var(--dark-color);
-}
-.latest ul li {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-.latest ul li:not(.active):hover {
-  color: var(--babyblue-color);
-}
-.latest .box {
+.latest .box,
+.products .box {
   padding: 5px;
   overflow: hidden;
   position: relative;
 }
-.latest .box::before {
+.latest .box::before,
+.products .box::before {
   content: attr(data-work);
   position: absolute;
-  background-color: rgb(51 209 204 / 76%);
+  background-color: rgba(239, 247, 250, 75%);
   width: calc(100% - 10px);
   height: calc(100% - 10px);
   display: flex;
@@ -108,10 +99,19 @@ body {
   font-size: 1.5rem;
   transform: translateX(calc(-100% - 5px));
 }
-.latest .box:hover::before {
+.latest .box:hover::before,
+.products .box:hover::before {
   transform: translateX(0);
 }
-/* End Latest */
+.latest .box .price,
+.products .box .price {
+  background-color: var(--dark-color);
+}
+.latest .box .stock,
+.products .box .stock {
+  background-color: var(--dark-color);
+}
+/* End Latest And Products */
 
 /* Start Subscribe */
 .subscribe {
@@ -205,10 +205,6 @@ body {
   background-color: var(--section-color);
 }
 /* End loginu */
-
-/* Start Cart */
-
-/* End Cart */
 
 /* Start Customs */
 #scroll-up {

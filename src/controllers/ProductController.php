@@ -13,7 +13,7 @@ class ProductController
 
 	public function products()
 	{
-		view('front/products');
+		view('front/products', $this->getProducts());
 	}
 
     public function createProduct()
@@ -64,8 +64,9 @@ class ProductController
         }
     }
 
-    public function getProducts()
+    // Read All Products
+    public function getProducts(): array
     {
-
+        return $this->productModel->selectAll();
     }
 }

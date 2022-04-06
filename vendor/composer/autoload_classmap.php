@@ -19,5 +19,6 @@ return array(
     'Models\\Database' => $baseDir . '/src/models/Database.php',
     'Models\\Login' => $baseDir . '/src/models/Login.php',
     'Models\\Signup' => $baseDir . '/src/models/Signup.php',
+    'Models\\Product' => $baseDir . '/src/models/Product.php',
     'Models\\Task' => $baseDir . '/src/models/Task.php',
 );
