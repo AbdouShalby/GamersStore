@@ -21,15 +21,22 @@ class Login
 	 */
 	public function login($email, $password): array
 	{
-		$this->db->query("SELECT email FROM users WHERE email = :email AND password = :pass");
+		$this->db->query("SELECT * FROM users WHERE email = :email AND password = :pass");
 		$this->db->bind(':email', $email);
 		$this->db->bind(':pass', $password);
 
 		if ($this->db->rowCount() > 0) {
-			$email = $this->db->single()->email;
+            print_r($this->db);
+			$first  = $this->db->single()->first_name;
+			$last   = $this->db->single()->last_name;
+			$email  = $this->db->single()->email;
+			$mobile  = $this->db->single()->mobile;
 			$data = [
-				'valid'   =>  '1',
-				'email'  => $email
+				'valid'     =>  '1',
+				'first'     =>  $first,
+				'last'      =>  $last,
+                'email'     =>  $email,
+				'mobile'    =>  $mobile
 			];
 			return $data;
 		}

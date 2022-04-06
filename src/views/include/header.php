@@ -1,11 +1,16 @@
 <?php
     session_start();
     if(isset($_SESSION['user'])){
-        $button = '
-            <a class="text-decoration-none text-white" href="' . URLROOT . '/profile">
-                <i class="p-2 p-lg-3 fa fa-user-circle fa-2x"></i>
-            </a>
-        ';
+        if($page == 'Profile'){
+            $button = '<a class="text-decoration-none text-white" href="' . URLROOT . '/profile">
+                <i class="avatar p-2 p-lg-3 fa fa-user-circle fa-2x active"></i>
+            </a>';
+        } else {
+            $button = '<a class="text-decoration-none text-white" href="' . URLROOT . '/profile">
+                <i class="avatar p-2 p-lg-3 fa fa-user-circle fa-2x"></i>
+            </a>';
+        }
+
     } else {
         $button = '<a class="btn rounded-pill main-btn" href="' . URLROOT . '/login">Login</a>';
     }

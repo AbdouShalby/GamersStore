@@ -7,6 +7,7 @@ $router->addRoute('products', ['controller' => 'ProductController', 'action' => 
 $router->addRoute('contact', ['controller' => 'ContactController', 'action' => 'contact']);
 $router->addRoute('terms', ['controller' => 'TermsController', 'action' => 'terms']);
 $router->addRoute('login', ['controller' => 'LoginController', 'action' => 'login']);
+$router->addRoute('logout', ['controller' => 'LoginController', 'action' => 'logout']);
 $router->addRoute('userlogin', ['controller' => 'LoginController', 'action' => 'userLogin']);
 $router->addRoute('signup', ['controller' => 'SignupController', 'action' => 'signup']);
 $router->addRoute('store', ['controller' => 'SignupController', 'action' => 'store']);

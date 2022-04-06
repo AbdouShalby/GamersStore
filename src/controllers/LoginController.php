@@ -23,27 +23,24 @@ class LoginController
 		if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
 			$hashedPass = sha1($_POST['password']);
 			$response = $this->loginModel->login($_POST['email'], $hashedPass);
-			if($response['valid'] == 1){
-				$_SESSION['user'] = $_POST['email'];
-				header('location: ' . URLROOT); // Redirect To Dashboard Page
+            if($response['valid'] == 1){
+                $_SESSION['user'] = $_POST['email'];
+                $_SESSION['user_first'] = $response['first'];
+                $_SESSION['user_last'] = $response['last'];
+                $_SESSION['user_mobile'] = $response['mobile'];
+                header('location: ' . URLROOT); // Redirect To Dashboard Page
 			}else{
-				echo "error";
+                if (empty($_POST['email'])) {
+                    $_SESSION['empty_email'] = EMPTY_EMAIL;
+                }
+                if (empty($_POST['password'])) {
+                    $_SESSION['empty_pass'] = EMPTY_PASSWORD;
+                }
+                $_SESSION['wrong_data'] = WRONG_DATA;
+                header('location: ' . URLROOT .'/login'); // Redirect To Dashboard Page
 			}
 //
-//			if () {
-//				$_SESSION['user'] = $_POST['email']; // Register Session Name
-//				header('location: ' . URLROOT); // Redirect To Dashboard Page
-//			} else {
-//				header('location: ' . URLROOT . '/login');
-//			}
 //
-//			if (empty($_POST['email'])) {
-//				$_SESSION['empty_email'] = EMPTY_EMAIL;
-//			}
-//
-//			if (empty($_POST['password'])) {
-//				$_SESSION['empty_pass'] = EMPTY_PASSWORD;
-//			}
 //
 //			if (!empty($_SESSION)) {
 //				header('location: ' . URLROOT . '/login');
@@ -59,4 +56,12 @@ class LoginController
 			header('location: ' . URLROOT . '/login');
 		}
 	}
+
+    public function logout() {
+        session_start();
+        session_unset();
+        session_destroy();
+        header('location: ' . URLROOT . '/login');
+        exit();
+    }
 }

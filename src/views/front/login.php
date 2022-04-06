@@ -39,9 +39,9 @@
           <a href="<?= URLROOT; ?>/signup" class="btn btn-outline-dark rounded-pill ps-5 pe-5">Sign Up</a>
         </div>
 	      <?php
-	      if (isset($_SESSION['account_login'])) {
-		      echo "<div class='p-2 mt-2 alert alert-info w-25 m-auto'>". $_SESSION['account_login'] ."</div>";
-		      unset($_SESSION['account_login']);
+	      if (isset($_SESSION['wrong_data'])) {
+		      echo "<div class='p-2 mt-2 alert alert-danger w-50 m-auto'>". $_SESSION['wrong_data'] ."</div>";
+		      unset($_SESSION['wrong_data']);
 	      }
 	      ?>
       </form>

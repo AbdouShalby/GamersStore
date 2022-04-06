@@ -22,7 +22,7 @@ define('EMPTY_PASSWORD', "Password Can't Be <strong>Empty</strong>");
 define('EMPTY_MOBILE', "Mobile Can't Be <strong>Empty</strong>");
 
 define('ACCOUNT_CREATED', 'Account Created Successfully');
-define('ACCOUNT_LOGIN', 'Welcome');
+define('WRONG_DATA', 'Wrong Informations Try Again Or Signup');
 
 // Social Media Links
 define('FACEBOOK', 'https://www.facebook.com/');
