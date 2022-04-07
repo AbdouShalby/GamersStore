@@ -5,6 +5,7 @@ require_once APPROOT . '/src/views/include/header.php';
         $firstName  = $_SESSION['user_first'];
         $lastName   = $_SESSION['user_last'];
         $mobile     = $_SESSION['user_mobile'];
+        $admin      = $_SESSION['user_admin'];
         ?>
         <div class="about-page pt-5 text-center text-md-start m-auto">
         <div class="container">
@@ -17,8 +18,13 @@ require_once APPROOT . '/src/views/include/header.php';
                     <img class="img-fluid w-25" src="<?= URLROOT;?>/public/imgs/avatar.png" alt="Team">
                 </div>
             </div>
+            <?php if ($admin == 1): ?>
             <div class="d-flex justify-content-center mt-3 mb-5">
-                <a class="btn rounded-pill main-btn text-uppercase" href="<?= URLROOT; ?>/logout">Logout</a>
+                <a class="btn rounded-pill main-btn text-uppercase" href="<?= URLROOT; ?>/addproduct">Add Item <i class="fa-solid fa-plus"></i></a>
+            </div>
+            <?php endif ?>
+            <div class="d-flex justify-content-center mt-3 mb-5">
+                <a class="btn rounded-pill main-btn text-uppercase" href="<?= URLROOT; ?>/logout">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </div>
     <?php } else {

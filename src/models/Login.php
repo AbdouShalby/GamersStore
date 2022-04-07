@@ -26,16 +26,18 @@ class Login
 		$this->db->bind(':pass', $password);
 
 		if ($this->db->rowCount() > 0) {
-			$first  = $this->db->single()->first_name;
-			$last   = $this->db->single()->last_name;
-			$email  = $this->db->single()->email;
-			$mobile  = $this->db->single()->mobile;
+			$first      = $this->db->single()->first_name;
+			$last       = $this->db->single()->last_name;
+			$email      = $this->db->single()->email;
+			$mobile     = $this->db->single()->mobile;
+            $admin      = $this->db->single()->is_admin;
 			$data = [
 				'valid'     =>  '1',
 				'first'     =>  $first,
 				'last'      =>  $last,
                 'email'     =>  $email,
-				'mobile'    =>  $mobile
+				'mobile'    =>  $mobile,
+                'admin'     =>  $admin
 			];
 			return $data;
 		}

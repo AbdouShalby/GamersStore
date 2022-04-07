@@ -230,12 +230,19 @@ body {
 .signup form input,
 .signup form a,
 .forgot form input,
-.forgot form a {
+.forgot form a,
+.addProduct form input,
+.addProduct form textarea,
+.addProduct form a,
+.addProduct form label{
   width: 300px;
 }
 .login form input:not([type="submit"]),
 .signup form input:not([type="submit"]),
-.forgot form input:not([type="submit"]) {
+.forgot form input:not([type="submit"]),
+.addProduct form input:not([type="submit"]),
+.addProduct form textarea,
+.addProduct form label {
   outline: none;
   border: 2px solid #BBB;
   border-radius: 2px;
@@ -243,7 +250,9 @@ body {
 }
 .login form input:not([type="submit"]):focus,
 .signup form input:not([type="submit"]):focus,
-.forgot form input:not([type="submit"]):focus {
+.forgot form input:not([type="submit"]):focus,
+.addProduct form input:not([type="submit"]):focus,
+.addProduct form label:focus {
   outline: none;
   border: 2px solid var(--dark-color)!important;
   border-radius: 2px;

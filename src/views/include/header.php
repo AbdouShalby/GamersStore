@@ -12,7 +12,7 @@
         }
 
     } else {
-        $button = '<a class="btn rounded-pill main-btn" href="' . URLROOT . '/login">Login</a>';
+        $button = '<a class="btn rounded-pill main-btn" href="' . URLROOT . '/login">Login <i class="fa-solid fa-right-to-bracket"></i></a>';
     }
 ?>
 

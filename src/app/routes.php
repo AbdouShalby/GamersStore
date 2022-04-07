@@ -4,6 +4,8 @@
 $router->addRoute('', ['controller' => 'IndexController', 'action' => 'home']);
 $router->addRoute('about', ['controller' => 'AboutController', 'action' => 'about']);
 $router->addRoute('products', ['controller' => 'ProductController', 'action' => 'products']);
+$router->addRoute('addproduct', ['controller' => 'ProductController', 'action' => 'addProduct']);
+$router->addRoute('storeproduct', ['controller' => 'ProductController', 'action' => 'createProduct']);
 $router->addRoute('contact', ['controller' => 'ContactController', 'action' => 'contact']);
 $router->addRoute('terms', ['controller' => 'TermsController', 'action' => 'terms']);
 $router->addRoute('login', ['controller' => 'LoginController', 'action' => 'login']);

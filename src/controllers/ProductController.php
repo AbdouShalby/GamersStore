@@ -16,52 +16,80 @@ class ProductController
 		view('front/products', $this->getProducts());
 	}
 
+    public function addProduct()
+    {
+        view('front/addProducts');
+    }
+
     public function createProduct()
     {
         session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
 
-            if (empty($_POST['first'])) {
-                $_SESSION['empty_first'] = EMPTY_FIRST_NAME;
-            } elseif (strlen($_POST['first']) < 4) {
-                $_SESSION['first_3'] = FIRST_NAME_3;
-            } elseif (strlen($_POST['first']) > 20) {
-                $_SESSION['first_20'] = FIRST_NAME_20;
+            // Upload Variables
+            $itemIMGName = $_FILES['image']['name'];
+            $itemIMGSize = $_FILES['image']['size'];
+            $itemIMGTmp  = $_FILES['image']['tmp_name'];
+            $itemIMGType = $_FILES['image']['type'];
+
+            // List For Allowed File Types To Upload
+            $itemsIMGAllowedExtensions = array("jpeg", "jpg", "png");
+
+            // Get Product Extension
+            $explode = explode('.', $itemIMGName);
+            $itemIMGExtension = strtolower(end($explode));
+
+            // Get Variable From The Form
+            $name       = $_POST['name'];
+            $desc       = $_POST['description'];
+            $price      = $_POST['price'];
+            $stock      = $_POST['stock'];
+            $country    = $_POST['country'];
+            $year       = $_POST['year'];
+
+            // Validate The Form
+            if (empty($name)) {
+                $_SESSION['product_err_name'] = PRODUCT_NAME;
+            }
+            if (empty($desc)) {
+                $_SESSION['product_err_desc'] = PRODUCT_DESC;
+            }
+            if (empty($price)) {
+                $_SESSION['product_err_price'] = PRODUCT_PRICE;
+            }
+            if ($price < 1) {
+                $_SESSION['product_low_price'] = PRODUCT_LOW_PRICE;
+            }
+            if (empty($stock)) {
+                $_SESSION['product_err_stock'] = PRODUCT_STOCK;
+            }
+            if ($stock < 1) {
+                $_SESSION['product_low_stock'] = PRODUCT_LOW_STOCK;
+            }
+            if (empty($country)) {
+                $_SESSION['product_err_country'] = PRODUCT_COUNTRY;
+            }
+            if (empty($year)) {
+                $_SESSION['product_err_year'] = PRODUCT_YEAR;
+            }
+            if (!empty($itemIMGName) && !in_array($itemIMGExtension, $itemsIMGAllowedExtensions)) {
+                $_SESSION['product_err_img_ex'] = PRODUCT_IMG_EX;
+            }
+            if (empty($itemIMGName)) {
+                $_SESSION['product_err_img'] = PRODUCT_IMG;
+            }
+            if ($itemIMGSize > 4194304) {
+                $_SESSION['product_err_img_si'] = PRODUCT_IMG_SI;
             }
 
-            if (empty($_POST['last'])) {
-                $_SESSION['empty_last'] = EMPTY_LAST_NAME;
-            } elseif (strlen($_POST['last']) < 4) {
-                $_SESSION['last_3'] = LAST_NAME_3;
-            }elseif (strlen($_POST['last']) > 20) {
-                $_SESSION['last_20'] = LAST_NAME_20;
+            if ($_SESSION != $_SESSION['product_err_name'] || $_SESSION['product_err_desc'] || $_SESSION['product_err_price'] || $_SESSION['product_low_price'] || $_SESSION['product_err_stock'] || $_SESSION['product_low_stock'] || $_SESSION['product_err_country'] || $_SESSION['product_err_year'] || $_SESSION['product_err_img_ex'] || $_SESSION['product_err_img'] || $_SESSION['product_err_img_si']) {
+                $image = rand(0, 100000000) . '_' . $itemIMGName;
+                move_uploaded_file($itemIMGTmp, UPLOAD_PATH . '/' . $image);
+                $this->productModel->addProduct($name, $desc, $image, $price, $stock, $country, $year);
+                $_SESSION['product_created'] = PRODUCT_CRATED;
             }
-
-            if (empty($_POST['email'])) {
-                $_SESSION['empty_email'] = EMPTY_EMAIL;
-            }
-
-            if (empty($_POST['password'])) {
-                $_SESSION['empty_pass'] = EMPTY_PASSWORD;
-            }
-
-            if (empty($_POST['mobile'])) {
-                $_SESSION['empty_mob'] = EMPTY_MOBILE;
-            }
-
-            if (!empty($_SESSION)) {
-                header('location: ' . URLROOT . '/products');
-            }
-
-            // Check If There's No Errors Proceed The Signup Operation
-            if (empty($_SESSION)) {
-                $this->signupModel->signup($_POST['first'], $_POST['last'], $_POST['email'], $hashedPass, $_POST['mobile']);
-                $_SESSION['account_created'] = ACCOUNT_CREATED;
-                header('location: ' . URLROOT . '/products');
-            }
-        } else {
-            header('location: ' . URLROOT . '/products');
         }
+        header('location: ' . URLROOT . '/products');
     }
 
     // Read All Products

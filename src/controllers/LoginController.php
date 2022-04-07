@@ -24,10 +24,11 @@ class LoginController
 			$hashedPass = sha1($_POST['password']);
 			$response = $this->loginModel->login($_POST['email'], $hashedPass);
             if($response['valid'] == 1){
-                $_SESSION['user'] = $_POST['email'];
-                $_SESSION['user_first'] = $response['first'];
-                $_SESSION['user_last'] = $response['last'];
-                $_SESSION['user_mobile'] = $response['mobile'];
+                $_SESSION['user']           = $_POST['email'];
+                $_SESSION['user_first']     = $response['first'];
+                $_SESSION['user_last']      = $response['last'];
+                $_SESSION['user_mobile']    = $response['mobile'];
+                $_SESSION['user_admin']     = $response['admin'];
                 header('location: ' . URLROOT); // Redirect To Dashboard Page
 			}else{
                 if (empty($_POST['email'])) {
@@ -39,19 +40,6 @@ class LoginController
                 $_SESSION['wrong_data'] = WRONG_DATA;
                 header('location: ' . URLROOT .'/login'); // Redirect To Dashboard Page
 			}
-//
-//
-//
-//			if (!empty($_SESSION)) {
-//				header('location: ' . URLROOT . '/login');
-//			}
-//
-//			if (empty($_SESSION)) {
-////				$this->loginModel->login($_POST['email'], $hashedPass);
-////				$_SESSION['user'] = $_POST['email']; // Register Session Name
-////				$_SESSION['account_login'] = ACCOUNT_LOGIN;
-////				header('location: ' . URLROOT . '/login');
-//			}
 		} else {
 			header('location: ' . URLROOT . '/login');
 		}

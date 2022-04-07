@@ -33,7 +33,7 @@
           <a href="<?= URLROOT; ?>/forgot">Forgot Password?</a>
         </div>
         <div class="col-12 mb-2">
-          <input class="btn btn-primary rounded-pill ps-5 pe-5" type="submit" value="Log In">
+          <input class="btn btn-primary rounded-pill ps-5 pe-5" type="submit" value='Log In'>
         </div>
         <div class="col-12 mb-2">
           <a href="<?= URLROOT; ?>/signup" class="btn btn-outline-dark rounded-pill ps-5 pe-5">Sign Up</a>

@@ -3,6 +3,7 @@
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
 define('URLROOT', 'http://localhost/samer');
+define('UPLOAD_PATH', APPROOT. "/public\imgs\products");
 // Site Name
 define('SITENAME', 'Gamers Store');
 
@@ -22,8 +23,22 @@ define('EMPTY_PASSWORD', "Password Can't Be <strong>Empty</strong>");
 
 define('EMPTY_MOBILE', "Mobile Can't Be <strong>Empty</strong>");
 
-define('ACCOUNT_CREATED', 'Account Created Successfully');
+define('PRODUCT_NAME', "Name Can't Be <strong>Empty</strong>");
+define('PRODUCT_DESC', "Description Can't Be <strong>Empty</strong>");
+define('PRODUCT_PRICE', "Price Can't Be <strong>Empty</strong>");
+define('PRODUCT_LOW_PRICE', "Price Can't Be <strong>Less Than $1</strong>");
+define('PRODUCT_STOCK', "Stock Can't Be <strong>Empty</strong>");
+define('PRODUCT_LOW_STOCK', "Stock Can't Be <strong>Less Than 1</strong>");
+define('PRODUCT_COUNTRY', "Country Can't Be <strong>Empty</strong>");
+define('PRODUCT_YEAR', "Year Can't Be <strong>Empty</strong>");
+define('PRODUCT_IMG_EX', "This Extension Is Not <strong>Allowed</strong>");
+define('PRODUCT_IMG', "Item Image Is <strong>Required</strong>");
+define('PRODUCT_IMG_SI', "Image Can't Be Larger Than <strong>4MB</strong>");
+
+
 define('WRONG_DATA', 'Wrong Informations Try Again Or Signup');
+define('ACCOUNT_CREATED', 'Account Created Successfully');
+define('PRODUCT_CRATED', 'Prodcut Created Successfully');
 
 // Social Media Links
 define('FACEBOOK', 'https://www.facebook.com/');

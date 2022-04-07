@@ -22,12 +22,11 @@ class Product
      * @param $stock
      * @param $country
      * @param $year
-     * @param $created_at
      * @return bool
      */
-    public function addProduct($name, $description, $image, $price, $stock, $country, $year, $created_at): bool
+    public function addProduct($name, $description, $image, $price, $stock, $country, $year): bool
     {
-        $this->db->query("INSERT INTO products (`name`, `description`, `image`, `price`,`stock`, `country`, `year`, `created_at`) VALUES (:name, :desc, :image, :price, :stock, :country, :year, :created)");
+        $this->db->query("INSERT INTO products (`name`, `description`, `image`, `price`,`stock`, `country`, `year`) VALUES (:name, :desc, :image, :price, :stock, :country, :year)");
         $this->db->bind(':name', $name);
         $this->db->bind(':desc', $description);
         $this->db->bind(':image', $image);
@@ -35,7 +34,6 @@ class Product
         $this->db->bind(':stock', $stock);
         $this->db->bind(':country', $country);
         $this->db->bind(':year', $year);
-        $this->db->bind(':created', $created_at);
         if ($this->db->execute())
             return true;
         return false;
