@@ -10,7 +10,7 @@
                 dolores adipisci quas provident.
               </p>
               <div class="copyright">
-                Created By <span>AbdouShalby</span>
+                Created By <span>Gamers Store Developers</span>
                 <div>&copy; 2022 - <span>Gamers Store Inc</span></div>
               </div>
             </div>

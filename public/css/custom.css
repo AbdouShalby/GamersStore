@@ -78,38 +78,68 @@ body {
 .latest, .products {
   background-color: var(--section-color);
 }
-.latest .box,
-.products .box {
-  padding: 5px;
-  overflow: hidden;
-  position: relative;
+.latest .row .card,
+.products .row .card {
+  border: 1px solid #212529;
+  transition: .5s;
 }
-.latest .box::before,
-.products .box::before {
-  content: attr(data-work);
-  position: absolute;
-  background-color: rgba(239, 247, 250, 75%);
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--dark-color);
-  transition: 0.4s;
-  font-size: 1.5rem;
-  transform: translateX(calc(-100% - 5px));
+.latest .row .card:hover,
+.products .row .card:hover {
+  border: 1px solid var(--red-color);
 }
-.latest .box:hover::before,
-.products .box:hover::before {
-  transform: translateX(0);
+.latest .row .card .price,
+.products .row .card .price {
+  background-color: #212529;
+  color: white;
+  transition: .3s;
 }
-.latest .box .price,
-.products .box .price {
-  background-color: var(--dark-color);
+.latest .row .card .price:hover,
+.products .row .card .price:hover {
+  background-color: var(--red-color);
 }
-.latest .box .stock,
-.products .box .stock {
-  background-color: var(--dark-color);
+.latest .row .card img,
+.products .row .card img {
+  max-height: 250px;
+}
+.latest .row .card .card-title,
+.products .row .card .card-title {
+  color: #212529;
+  transition: .3s;
+}
+.latest .row .card .card-title:hover,
+.products .row .card .card-title:hover {
+  background-color: #212529;
+  color: white;
+  border-radius: 20px;
+}
+.latest .row .card .card-text,
+.products .row .card .card-text {
+  opacity: 75%;
+  transition: .3s;
+}
+.latest .row .card .card-text:hover,
+.products .row .card .card-text:hover {
+  opacity: 100%;
+}
+.latest .row .card .stock,
+.products .row .card .stock {
+  color: #212529;
+  transition: .3s;
+}
+.latest .row .card .stock:hover,
+.products .row .card .stock:hover {
+  background-color: #212529;
+  color: white;
+  border-radius: 20px;
+}
+.latest .row .card .time,
+.products .row .card .time {
+  opacity: 50%;
+  transition: .3s;
+}
+.latest .row .card .time:hover,
+.products .row .card .time:hover {
+  opacity: 100%;
 }
 /* End Latest And Products */
 
@@ -199,12 +229,25 @@ body {
 }
 /* End Contact */
 
-/* Start loginu */
+/* Start login */
 .login,
 .signup {
   background-color: var(--section-color);
 }
-/* End loginu */
+/* End login */
+
+/* Start Cart */
+.countItem {
+  position: relative;
+  bottom: 10px;
+}
+.cart a {
+  color: white;
+}
+.cart a:hover {
+  color: var(--red-color);
+}
+/* End Cart */
 
 /* Start Customs */
 #scroll-up {

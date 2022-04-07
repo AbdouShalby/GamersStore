@@ -29,14 +29,19 @@
               echo '<h2 class="mb-0">No Items</h2>';
           } else {
             foreach ($data as $item) { ?>
-            <div class="col-sm-6 col-md-4 col-lg-3 text-start">
-                <div class="box mb-3 bg-white" data-work="<?= $item->name;?>">
-                    <span class="price badge fs-6 ms-2 me-5"><?= '$' .$item->price; ?></span>
-                    <img class="img-fluid" src="<?= URLROOT;?>/public/imgs/products/<?= $item->image ?>" alt="<?= $item->name;?>">
-                    <span class="time text-center fs-6 d-block text-black-50"><?= $item->created_at; ?></span>
-                </div>
-                <div class="text-center">
-                    <button class="add-cart btn rounded-pill btn-outline-dark text-uppercase mb-5">ADD TO CART <i class="fa-solid fa-cart-shopping"></i></button>
+            <div class="card mt-0 mb-4 m-auto" style="width: 17rem;">
+                <span class="price badge fs-6 position-absolute start-0 mt-1 ms-1"><?= '$' .$item->price; ?></span>
+                <img class="img-fluid mt-2" alt="<?= $item->description;?>" src="<?= URLROOT;?>/public/imgs/products/<?= $item->image ?>">
+                <div class="card-body">
+                    <h5 class="card-title fs-4 mb-3 pb-3 pt-3"><?= $item->name;?></h5>
+                    <p class="card-text"><?= $item->description; ?></p>
+                    <span class="stock text-center fs-6 d-block mt-5 mb-4 pt-1 pb-1">Available Quantity: <?= $item->stock; ?></span>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <button class="add-cart btn rounded-pill btn-outline-dark text-uppercase addToCart">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    <?php } else { ?>
+                        <a href="<?= URLROOT ?>/login" class="btn rounded-pill btn-outline-dark text-uppercase">Login To Add <i class="fa-solid fa-right-to-bracket"></i></a>
+                    <?php } ?>
+                    <span class="time text-center fs-6 d-block mt-4 pb-0"><?= $item->created_at; ?></span>
                 </div>
             </div>
           <?php

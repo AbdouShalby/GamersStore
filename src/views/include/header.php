@@ -55,7 +55,16 @@
               <a class="nav-link p-2 p-lg-3 <?php if($page == 'Contact'){echo 'active';} ?>" href="<?= URLROOT; ?>/contact">Contact</a>
             </li>
           </ul>
-          <?php echo $button;?>
+          <?php echo $button;
+          if (isset($_SESSION['user'])) {
+              echo '
+              <div class="cart fs-5">
+                <a class="text-decoration-none" href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="countItem">0</span>
+                </a>
+            </div>';
+          } ?>
         </div>
       </div>
     </nav>
