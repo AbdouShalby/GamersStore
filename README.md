@@ -1,5 +1,5 @@
 # Games store 
-```
+
 ## Project
 > This Project Build In Pure PHP, MVC Design Pattern.
 
@@ -22,4 +22,3 @@ For a normal user for testing from crate page you can create new user and make y
 > SRC Directory Contain [App Directory, Controllers Directory, Models Directory, View Directory].
 
 > Vendor Directory For Composer Autoload Files.
-```
